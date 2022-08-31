@@ -11,11 +11,15 @@ import UIKit
 
 /// Our TableViewAdapter for DriverList
 final class DriverListAdapter: NSObject, ListViewAdapterType{
-   
-    weak var delegate: ListViewAdapterDelegate?
-    var cancelable: AnyCancellable!
-    private weak var tableView: UITableView?
+    
     typealias ModelType = DriverListItemViewModelType
+
+    //    MARK: - Stored Properties
+    
+    private weak var tableView: UITableView?
+    weak var delegate: ListViewAdapterDelegate?
+    
+    var cancelable: AnyCancellable!
 
     var items: [[DriverListItemViewModelType]]  {
         didSet{
@@ -25,11 +29,14 @@ final class DriverListAdapter: NSObject, ListViewAdapterType{
             }
         }
     }
+
+    //    MARK: - Initializers
     private override init(){
         self.items = [[]]
         self.tableView = nil
         super.init()
     }
+    
     init(items: [[ModelType]], tableView: UITableView, dataSubject: PassthroughSubject <[[ModelType]], Never>){
         
         self.items = items
@@ -42,9 +49,15 @@ final class DriverListAdapter: NSObject, ListViewAdapterType{
         self.cancelable =  dataSubject.sink { [weak self] items in
             self?.items = items
         }
-    
-       
     }
+
+    deinit{
+        print("Deinit Adapter class")
+    }
+}
+extension DriverListAdapter{
+    
+    // MARK: - Helper Functions
     
     private func registerNibs(){
         let identifiers =  self.items.joined().compactMap({ item in
@@ -56,11 +69,7 @@ final class DriverListAdapter: NSObject, ListViewAdapterType{
             tableView?.register(UINib.init(nibName: reusableIdentifier, bundle: nil), forCellReuseIdentifier: reusableIdentifier)
         }
     }
-    deinit{
-        print("Deinit Adapter class")
-    }
 }
-
 extension DriverListAdapter: UITableViewDelegate{
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -86,6 +95,7 @@ extension DriverListAdapter: UITableViewDataSource{
         
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: item.getReusableIdentifierName()), let baseCell = cell as? BaseTableViewCell  else{return UITableViewCell.init()}
+        
         baseCell.setup(viewModel: item)
         return cell
     }

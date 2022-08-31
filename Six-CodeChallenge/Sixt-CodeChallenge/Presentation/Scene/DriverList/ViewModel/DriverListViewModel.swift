@@ -11,14 +11,17 @@ import CoreLocation
 /// DriverListViewModel updates its data on viewdidload callback and it also refresh data on refresh callback
 @objcMembers
 final class DriverListViewModel: NSObject,  DriverListViewModelType {
+   
+    private var repository: DriverListRepositoryType
+    private var cancelables: [AnyCancellable]  = []
+    
     var itemsPublisher: Published<[DriverListItemViewModelType]>.Publisher{$items}
     
     var loadingPublisher: Published<Bool>.Publisher{$isLoading}
     
     var errorPublisher: Published<String>.Publisher {$showError}
     
-    private var repository: DriverListRepositoryType
-    private var cancelables: [AnyCancellable]  = []
+ 
     
     @Published private var items: [DriverListItemViewModelType] = []
     @Published private var isLoading: Bool = false
@@ -42,13 +45,13 @@ final class DriverListViewModel: NSObject,  DriverListViewModelType {
     }
     
     private func getDriverList(){
-       
-      
-        
+   
         self.isLoading = true
         self.repository.getDriverList() { [weak self] drivers, error in
             guard let self = self else{return}
+            
             self.isLoading = false
+            
             if let error = error{
                 self.showError = error
                 return

@@ -24,6 +24,7 @@ final class MapViewModel: MapViewModelType{
     @Published private var filteredDrivers: [Driver] = []
     @Published private var isLoading: Bool = false
     @Published private var error: String = ""
+   
     private let repo: DriverListRepositoryType
     private var drivers: [Driver] = []
     

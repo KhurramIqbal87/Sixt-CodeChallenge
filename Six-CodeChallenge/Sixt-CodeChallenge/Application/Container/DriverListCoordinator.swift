@@ -24,6 +24,7 @@ final class DriverListCoordinator: NSObject, ParentCoordinator{
     func start() {
         
         let viewController = self.container.createDriverListViewController()
+        
         self.navController.setViewControllers([viewController], animated: true)
             
     }

@@ -9,6 +9,7 @@ import Foundation
 class DriverListRepository: DriverListRepositoryType{
     
     private let networkManager: ApiClientType
+    
     init(networkManager: ApiClientType = ApiClient.sharedInstance){
         self.networkManager = networkManager
     }
