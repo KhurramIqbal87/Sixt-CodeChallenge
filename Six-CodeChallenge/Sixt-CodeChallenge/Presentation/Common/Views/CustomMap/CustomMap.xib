@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomMap" customModule="Sixt_CodeChallenge" customModuleProvider="target">
+            <connections>
+                <outlet property="currentLocationView" destination="2Wg-G8-kUh" id="NGW-oA-WOa"/>
+                <outlet property="mapView" destination="Okc-CE-FsZ" id="a11-HH-ENT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ivV-ip-Z4y">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Okc-CE-FsZ">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                </mapView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Wg-G8-kUh">
+                    <rect key="frame" x="202" y="443" width="10" height="10"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="1G2-UV-o3g"/>
+                        <constraint firstAttribute="width" constant="10" id="Ejq-SV-Rv7"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="ANF-ag-9H0"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="ANF-ag-9H0" firstAttribute="bottom" secondItem="Okc-CE-FsZ" secondAttribute="bottom" id="KoL-9h-CfY"/>
+                <constraint firstItem="2Wg-G8-kUh" firstAttribute="centerX" secondItem="ivV-ip-Z4y" secondAttribute="centerX" id="QTA-63-Dsc"/>
+                <constraint firstItem="Okc-CE-FsZ" firstAttribute="leading" secondItem="ANF-ag-9H0" secondAttribute="leading" id="Shm-ea-5a5"/>
+                <constraint firstItem="Okc-CE-FsZ" firstAttribute="top" secondItem="ANF-ag-9H0" secondAttribute="top" id="bBx-2l-GbY"/>
+                <constraint firstItem="2Wg-G8-kUh" firstAttribute="centerY" secondItem="ivV-ip-Z4y" secondAttribute="centerY" id="n4j-aC-vUL"/>
+                <constraint firstItem="ANF-ag-9H0" firstAttribute="trailing" secondItem="Okc-CE-FsZ" secondAttribute="trailing" id="nDx-lP-JM5"/>
+            </constraints>
+            <point key="canvasLocation" x="238" y="187"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
