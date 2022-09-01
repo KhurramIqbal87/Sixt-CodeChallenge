@@ -152,7 +152,7 @@ init(repository: CarListRepositoryType) {
      private func getCarList(){
    
         self.isLoading = true
-        self.repository.getCarList() { [weak self] Cars, error in
+        self.repository.getCarList() { [weak self] cars, error in
             guard let self = self else{return}
             
             self.isLoading = false
@@ -161,24 +161,24 @@ init(repository: CarListRepositoryType) {
                 self.showError = error
                 return
             }
-            if let Cars = Cars{
-                self.convertModelToViewModels(Cars: Cars)
+            if let cars = cars{
+                self.convertModelToViewModels(cars: cars)
             }
         }
     }
     
-    private func convertModelToViewModels(Cars: CarList){
+    private func convertModelToViewModels(cars: carList){
         
-        self.items =  Cars.compactMap { Car in
-            return CarListItemViewModel.init(model:Car)
+        self.items =  carList.compactMap { car in
+            return CarListItemViewModel.init(model:car)
         }
     }
 ```    
 ``` Swift    
     self.viewModel.itemsPublisher
             .receive(on: RunLoop.main)
-            .sink { [weak self] Cars in
-                self?.adpaterSubject.send([Cars])
+            .sink { [weak self] cars in
+                self?.adpaterSubject.send([cars])
 
             }
             .store(in: &cancelables)
