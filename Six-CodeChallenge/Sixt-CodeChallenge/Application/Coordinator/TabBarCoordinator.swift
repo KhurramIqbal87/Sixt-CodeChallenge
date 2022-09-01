@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-// This application is supposed to be tab bar we have two tab bars one for showing drivers on map with respect to our current location and other showing all driver in a list.
+// This application is supposed to be tab bar we have two tab bars one for showing cars on map with respect to our current location and other showing all car in a list.
 final class TabBarCoordinator: ParentCoordinator{
     var parentCoordinator: Coordinator?
     var childCoordinators: [Coordinator]?

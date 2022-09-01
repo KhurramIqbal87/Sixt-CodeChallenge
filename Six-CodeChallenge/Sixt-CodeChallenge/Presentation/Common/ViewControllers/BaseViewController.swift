@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class BaseViewController<T: BaseViewModel> : UIViewController   {
+    
     //MARK: - StoredProperties
     
     let viewModel: T

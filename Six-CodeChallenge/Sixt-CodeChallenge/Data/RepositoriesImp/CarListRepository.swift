@@ -1,12 +1,13 @@
 //
-//  DriverListRepository.swift
+//  CarListRepository.swift
 //  Sixt-CodeChallenge
 //
 //  Created by Khurram Iqbal on 30/08/2022.
 //
 
 import Foundation
-class DriverListRepository: DriverListRepositoryType{
+
+class CarListRepository: CarListRepositoryType{
     
     private let networkManager: ApiClientType
     
@@ -14,12 +15,13 @@ class DriverListRepository: DriverListRepositoryType{
         self.networkManager = networkManager
     }
     
-    func getDriverList( result: @escaping(driverList?, String?) -> Void) {
-        let request = DriverListRequest.init()
-        self.networkManager.getData(request: request) {  (response: driverList?, error) in
+    func getCarList( result: @escaping(carList?, String?) -> Void) {
+       
+        let request = CarListRequest.init()
+        
+        self.networkManager.getData(request: request) {  (response: carList?, error) in
             
             result(response,error)
         }
-     
     }
 }

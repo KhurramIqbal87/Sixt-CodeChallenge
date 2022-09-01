@@ -7,6 +7,7 @@
 
 import Foundation
 public enum NetworkError{
+    
     case noInternet
     case networkError(error: HTTPStatusCode)
     case dataSerializationError(error: String)

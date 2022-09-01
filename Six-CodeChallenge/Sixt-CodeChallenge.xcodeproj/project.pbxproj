@@ -12,12 +12,12 @@
 		D529EA8628BE837C005D0C85 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EA8528BE837C005D0C85 /* MapViewModel.swift */; };
 		D529EA8828BE8561005D0C85 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D529EA8728BE8561005D0C85 /* MapViewController.xib */; };
 		D529EA8A28BE857E005D0C85 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EA8928BE857E005D0C85 /* MapViewController.swift */; };
-		D529EA9028BE8619005D0C85 /* DriverListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EA8E28BE8619005D0C85 /* DriverListViewController.swift */; };
-		D529EA9428BE8668005D0C85 /* DriverListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EA9228BE8668005D0C85 /* DriverListTableViewCell.swift */; };
-		D529EA9528BE8668005D0C85 /* DriverListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D529EA9328BE8668005D0C85 /* DriverListTableViewCell.xib */; };
-		D529EA9828BE86A6005D0C85 /* DriverListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EA9728BE86A6005D0C85 /* DriverListItemViewModel.swift */; };
-		D529EA9A28BE97B9005D0C85 /* DriverListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EA9928BE97B9005D0C85 /* DriverListViewModel.swift */; };
-		D529EA9D28BE9863005D0C85 /* DriverListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EA9C28BE9863005D0C85 /* DriverListAdapter.swift */; };
+		D529EA9028BE8619005D0C85 /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EA8E28BE8619005D0C85 /* CarListViewController.swift */; };
+		D529EA9428BE8668005D0C85 /* CarListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EA9228BE8668005D0C85 /* CarListTableViewCell.swift */; };
+		D529EA9528BE8668005D0C85 /* CarListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D529EA9328BE8668005D0C85 /* CarListTableViewCell.xib */; };
+		D529EA9828BE86A6005D0C85 /* CarListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EA9728BE86A6005D0C85 /* CarListItemViewModel.swift */; };
+		D529EA9A28BE97B9005D0C85 /* CarListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EA9928BE97B9005D0C85 /* CarListViewModel.swift */; };
+		D529EA9D28BE9863005D0C85 /* CarListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EA9C28BE9863005D0C85 /* CarListAdapter.swift */; };
 		D529EAA328BE9ABE005D0C85 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EAA128BE9ABE005D0C85 /* TabBarViewController.swift */; };
 		D529EAA428BE9ABE005D0C85 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D529EAA228BE9ABE005D0C85 /* TabBarViewController.xib */; };
 		D529EAA628BE9B37005D0C85 /* TabBarViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EAA528BE9B37005D0C85 /* TabBarViewModelType.swift */; };
@@ -25,31 +25,31 @@
 		D529EAAC28BE9E14005D0C85 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EAAB28BE9E14005D0C85 /* Container.swift */; };
 		D529EAAE28BE9E2E005D0C85 /* TabBarContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EAAD28BE9E2E005D0C85 /* TabBarContainer.swift */; };
 		D529EAB028BE9E36005D0C85 /* MapContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EAAF28BE9E36005D0C85 /* MapContainer.swift */; };
-		D529EAB228BE9E45005D0C85 /* DriverListContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EAB128BE9E45005D0C85 /* DriverListContainer.swift */; };
+		D529EAB228BE9E45005D0C85 /* CarListContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EAB128BE9E45005D0C85 /* CarListContainer.swift */; };
 		D529EAB428BE9EAF005D0C85 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EAB328BE9EAF005D0C85 /* Coordinator.swift */; };
 		D529EAB628BE9ED0005D0C85 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EAB528BE9ED0005D0C85 /* AppCoordinator.swift */; };
 		D529EAB828BE9EF5005D0C85 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EAB728BE9EF5005D0C85 /* TabBarCoordinator.swift */; };
-		D529EABA28BE9F3B005D0C85 /* DriverListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EAB928BE9F3B005D0C85 /* DriverListCoordinator.swift */; };
-		D529EABC28BE9F61005D0C85 /* DriverMapCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EABB28BE9F61005D0C85 /* DriverMapCoodinator.swift */; };
+		D529EABA28BE9F3B005D0C85 /* CarListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EAB928BE9F3B005D0C85 /* CarListCoordinator.swift */; };
+		D529EABC28BE9F61005D0C85 /* CarMapCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EABB28BE9F61005D0C85 /* CarMapCoodinator.swift */; };
 		D529EB4428BF5BF7005D0C85 /* CustomMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = D529EB4328BF5BF7005D0C85 /* CustomMap.xib */; };
 		D529EB4728BF6197005D0C85 /* CustomMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EB4628BF6197005D0C85 /* CustomMapViewModel.swift */; };
 		D529EB4B28BF61D9005D0C85 /* CustomMapViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EB4A28BF61D9005D0C85 /* CustomMapViewModelType.swift */; };
 		D529EB4D28BF6AEA005D0C85 /* CarAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529EB4C28BF6AEA005D0C85 /* CarAnnotation.swift */; };
 		D529EBD228BF7505005D0C85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5954CB328BB90790035AD47 /* SceneDelegate.swift */; };
-		D529EBD528BF76C4005D0C85 /* DriverListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D529EBD428BF76C4005D0C85 /* DriverListViewController.xib */; };
+		D529EBD528BF76C4005D0C85 /* CarListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D529EBD428BF76C4005D0C85 /* CarListViewController.xib */; };
 		D53E8FD928BD5AA0007082CC /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FD828BD5AA0007082CC /* BaseViewModel.swift */; };
-		D53E8FDB28BD5ADE007082CC /* DriverListViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FDA28BD5ADE007082CC /* DriverListViewModelType.swift */; };
-		D53E8FDD28BD5AF8007082CC /* DriverListItemViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FDC28BD5AF8007082CC /* DriverListItemViewModelType.swift */; };
+		D53E8FDB28BD5ADE007082CC /* CarListViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FDA28BD5ADE007082CC /* CarListViewModelType.swift */; };
+		D53E8FDD28BD5AF8007082CC /* CarListItemViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FDC28BD5AF8007082CC /* CarListItemViewModelType.swift */; };
 		D53E8FDF28BD5B34007082CC /* BaseCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FDE28BD5B34007082CC /* BaseCellViewModelType.swift */; };
 		D53E8FE228BD5B71007082CC /* MapViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FE128BD5B71007082CC /* MapViewModelType.swift */; };
-		D53E8FE428BD5BBF007082CC /* DriverListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FE328BD5BBF007082CC /* DriverListRequest.swift */; };
-		D53E8FE828BD5C76007082CC /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FE728BD5C76007082CC /* Driver.swift */; };
-		D53E8FEA28BD5E2F007082CC /* DriverListRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FE928BD5E2F007082CC /* DriverListRepositoryType.swift */; };
+		D53E8FE428BD5BBF007082CC /* CarListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FE328BD5BBF007082CC /* CarListRequest.swift */; };
+		D53E8FE828BD5C76007082CC /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FE728BD5C76007082CC /* Car.swift */; };
+		D53E8FEA28BD5E2F007082CC /* CarListRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FE928BD5E2F007082CC /* CarListRepositoryType.swift */; };
 		D53E8FEC28BD5E9E007082CC /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FEB28BD5E9E007082CC /* ApiClient.swift */; };
 		D53E8FEE28BD5EE3007082CC /* Reachibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FED28BD5EE3007082CC /* Reachibility.swift */; };
 		D53E8FF028BD5FD0007082CC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FEF28BD5FD0007082CC /* NetworkError.swift */; };
 		D53E8FF228BD5FEE007082CC /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FF128BD5FEE007082CC /* HttpStatusCode.swift */; };
-		D53E8FF628BD6054007082CC /* DriverListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FF528BD6054007082CC /* DriverListRepository.swift */; };
+		D53E8FF628BD6054007082CC /* CarListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FF528BD6054007082CC /* CarListRepository.swift */; };
 		D53E8FF828BD631F007082CC /* MockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FF728BD631F007082CC /* MockRepository.swift */; };
 		D53E8FFA28BD70A1007082CC /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FF928BD70A1007082CC /* CLLocationCoordinate2D+Extension.swift */; };
 		D53E8FFC28BD70EC007082CC /* MKMapView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E8FFB28BD70EC007082CC /* MKMapView+Extension.swift */; };
@@ -65,7 +65,7 @@
 		D5954CD228BB9E8F0035AD47 /* ApiClientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5954CD128BB9E8F0035AD47 /* ApiClientType.swift */; };
 		D5954CD428BB9F1F0035AD47 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5954CD328BB9F1F0035AD47 /* BaseRequest.swift */; };
 		D5E9938D28BFADA30063B6E6 /* Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9938C28BFADA30063B6E6 /* Codable+Extension.swift */; };
-		D5E9939D28BFB9150063B6E6 /* DriveListViewModelTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9939C28BFB9150063B6E6 /* DriveListViewModelTypeTest.swift */; };
+		D5E9939D28BFB9150063B6E6 /* CarListViewModelTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9939C28BFB9150063B6E6 /* CarListViewModelTypeTest.swift */; };
 		D5E9939F28BFB9EF0063B6E6 /* MapLocationFilterDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9939E28BFB9EF0063B6E6 /* MapLocationFilterDataTest.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,12 +85,12 @@
 		D529EA8528BE837C005D0C85 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		D529EA8728BE8561005D0C85 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		D529EA8928BE857E005D0C85 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		D529EA8E28BE8619005D0C85 /* DriverListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverListViewController.swift; sourceTree = "<group>"; };
-		D529EA9228BE8668005D0C85 /* DriverListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverListTableViewCell.swift; sourceTree = "<group>"; };
-		D529EA9328BE8668005D0C85 /* DriverListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DriverListTableViewCell.xib; sourceTree = "<group>"; };
-		D529EA9728BE86A6005D0C85 /* DriverListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverListItemViewModel.swift; sourceTree = "<group>"; };
-		D529EA9928BE97B9005D0C85 /* DriverListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverListViewModel.swift; sourceTree = "<group>"; };
-		D529EA9C28BE9863005D0C85 /* DriverListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverListAdapter.swift; sourceTree = "<group>"; };
+		D529EA8E28BE8619005D0C85 /* CarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
+		D529EA9228BE8668005D0C85 /* CarListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListTableViewCell.swift; sourceTree = "<group>"; };
+		D529EA9328BE8668005D0C85 /* CarListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarListTableViewCell.xib; sourceTree = "<group>"; };
+		D529EA9728BE86A6005D0C85 /* CarListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListItemViewModel.swift; sourceTree = "<group>"; };
+		D529EA9928BE97B9005D0C85 /* CarListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewModel.swift; sourceTree = "<group>"; };
+		D529EA9C28BE9863005D0C85 /* CarListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListAdapter.swift; sourceTree = "<group>"; };
 		D529EAA128BE9ABE005D0C85 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D529EAA228BE9ABE005D0C85 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 		D529EAA528BE9B37005D0C85 /* TabBarViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModelType.swift; sourceTree = "<group>"; };
@@ -98,30 +98,30 @@
 		D529EAAB28BE9E14005D0C85 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		D529EAAD28BE9E2E005D0C85 /* TabBarContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarContainer.swift; sourceTree = "<group>"; };
 		D529EAAF28BE9E36005D0C85 /* MapContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContainer.swift; sourceTree = "<group>"; };
-		D529EAB128BE9E45005D0C85 /* DriverListContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverListContainer.swift; sourceTree = "<group>"; };
+		D529EAB128BE9E45005D0C85 /* CarListContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListContainer.swift; sourceTree = "<group>"; };
 		D529EAB328BE9EAF005D0C85 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D529EAB528BE9ED0005D0C85 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		D529EAB728BE9EF5005D0C85 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
-		D529EAB928BE9F3B005D0C85 /* DriverListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverListCoordinator.swift; sourceTree = "<group>"; };
-		D529EABB28BE9F61005D0C85 /* DriverMapCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMapCoodinator.swift; sourceTree = "<group>"; };
+		D529EAB928BE9F3B005D0C85 /* CarListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListCoordinator.swift; sourceTree = "<group>"; };
+		D529EABB28BE9F61005D0C85 /* CarMapCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMapCoodinator.swift; sourceTree = "<group>"; };
 		D529EB4328BF5BF7005D0C85 /* CustomMap.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomMap.xib; sourceTree = "<group>"; };
 		D529EB4628BF6197005D0C85 /* CustomMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapViewModel.swift; sourceTree = "<group>"; };
 		D529EB4A28BF61D9005D0C85 /* CustomMapViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapViewModelType.swift; sourceTree = "<group>"; };
 		D529EB4C28BF6AEA005D0C85 /* CarAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarAnnotation.swift; sourceTree = "<group>"; };
-		D529EBD428BF76C4005D0C85 /* DriverListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DriverListViewController.xib; sourceTree = "<group>"; };
+		D529EBD428BF76C4005D0C85 /* CarListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarListViewController.xib; sourceTree = "<group>"; };
 		D53E8FD828BD5AA0007082CC /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		D53E8FDA28BD5ADE007082CC /* DriverListViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverListViewModelType.swift; sourceTree = "<group>"; };
-		D53E8FDC28BD5AF8007082CC /* DriverListItemViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverListItemViewModelType.swift; sourceTree = "<group>"; };
+		D53E8FDA28BD5ADE007082CC /* CarListViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewModelType.swift; sourceTree = "<group>"; };
+		D53E8FDC28BD5AF8007082CC /* CarListItemViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListItemViewModelType.swift; sourceTree = "<group>"; };
 		D53E8FDE28BD5B34007082CC /* BaseCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellViewModelType.swift; sourceTree = "<group>"; };
 		D53E8FE128BD5B71007082CC /* MapViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelType.swift; sourceTree = "<group>"; };
-		D53E8FE328BD5BBF007082CC /* DriverListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverListRequest.swift; sourceTree = "<group>"; };
-		D53E8FE728BD5C76007082CC /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
-		D53E8FE928BD5E2F007082CC /* DriverListRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverListRepositoryType.swift; sourceTree = "<group>"; };
+		D53E8FE328BD5BBF007082CC /* CarListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListRequest.swift; sourceTree = "<group>"; };
+		D53E8FE728BD5C76007082CC /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		D53E8FE928BD5E2F007082CC /* CarListRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListRepositoryType.swift; sourceTree = "<group>"; };
 		D53E8FEB28BD5E9E007082CC /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		D53E8FED28BD5EE3007082CC /* Reachibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachibility.swift; sourceTree = "<group>"; };
 		D53E8FEF28BD5FD0007082CC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D53E8FF128BD5FEE007082CC /* HttpStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
-		D53E8FF528BD6054007082CC /* DriverListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverListRepository.swift; sourceTree = "<group>"; };
+		D53E8FF528BD6054007082CC /* CarListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListRepository.swift; sourceTree = "<group>"; };
 		D53E8FF728BD631F007082CC /* MockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepository.swift; sourceTree = "<group>"; };
 		D53E8FF928BD70A1007082CC /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
 		D53E8FFB28BD70EC007082CC /* MKMapView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Extension.swift"; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 		D5E9938C28BFADA30063B6E6 /* Codable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extension.swift"; sourceTree = "<group>"; };
 		D5E9939228BFB7EF0063B6E6 /* Sixt-CodeChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sixt-CodeChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E9939B28BFB9140063B6E6 /* Sixt-CodeChallengeTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sixt-CodeChallengeTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		D5E9939C28BFB9150063B6E6 /* DriveListViewModelTypeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveListViewModelTypeTest.swift; sourceTree = "<group>"; };
+		D5E9939C28BFB9150063B6E6 /* CarListViewModelTypeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewModelTypeTest.swift; sourceTree = "<group>"; };
 		D5E9939E28BFB9EF0063B6E6 /* MapLocationFilterDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationFilterDataTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -238,8 +238,8 @@
 		D529EA8B28BE85CB005D0C85 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				D529EA9728BE86A6005D0C85 /* DriverListItemViewModel.swift */,
-				D529EA9928BE97B9005D0C85 /* DriverListViewModel.swift */,
+				D529EA9728BE86A6005D0C85 /* CarListItemViewModel.swift */,
+				D529EA9928BE97B9005D0C85 /* CarListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -247,7 +247,7 @@
 		D529EA8C28BE85D6005D0C85 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D529EA8E28BE8619005D0C85 /* DriverListViewController.swift */,
+				D529EA8E28BE8619005D0C85 /* CarListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -256,7 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				D529EA9628BE8670005D0C85 /* cell */,
-				D529EBD428BF76C4005D0C85 /* DriverListViewController.xib */,
+				D529EBD428BF76C4005D0C85 /* CarListViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,8 +264,8 @@
 		D529EA9628BE8670005D0C85 /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				D529EA9228BE8668005D0C85 /* DriverListTableViewCell.swift */,
-				D529EA9328BE8668005D0C85 /* DriverListTableViewCell.xib */,
+				D529EA9228BE8668005D0C85 /* CarListTableViewCell.swift */,
+				D529EA9328BE8668005D0C85 /* CarListTableViewCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -273,7 +273,7 @@
 		D529EA9B28BE983C005D0C85 /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
-				D529EA9C28BE9863005D0C85 /* DriverListAdapter.swift */,
+				D529EA9C28BE9863005D0C85 /* CarListAdapter.swift */,
 			);
 			path = Adapter;
 			sourceTree = "<group>";
@@ -305,6 +305,8 @@
 		D529EAA928BE9DE6005D0C85 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				D529EAB928BE9F3B005D0C85 /* CarListCoordinator.swift */,
+				D529EABB28BE9F61005D0C85 /* CarMapCoodinator.swift */,
 				D529EAB328BE9EAF005D0C85 /* Coordinator.swift */,
 				D529EAB528BE9ED0005D0C85 /* AppCoordinator.swift */,
 				D529EAB728BE9EF5005D0C85 /* TabBarCoordinator.swift */,
@@ -318,9 +320,7 @@
 				D529EAAB28BE9E14005D0C85 /* Container.swift */,
 				D529EAAD28BE9E2E005D0C85 /* TabBarContainer.swift */,
 				D529EAAF28BE9E36005D0C85 /* MapContainer.swift */,
-				D529EAB128BE9E45005D0C85 /* DriverListContainer.swift */,
-				D529EAB928BE9F3B005D0C85 /* DriverListCoordinator.swift */,
-				D529EABB28BE9F61005D0C85 /* DriverMapCoodinator.swift */,
+				D529EAB128BE9E45005D0C85 /* CarListContainer.swift */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -479,8 +479,8 @@
 				D5954CD128BB9E8F0035AD47 /* ApiClientType.swift */,
 				D5954CD328BB9F1F0035AD47 /* BaseRequest.swift */,
 				D53E8FD828BD5AA0007082CC /* BaseViewModel.swift */,
-				D53E8FDA28BD5ADE007082CC /* DriverListViewModelType.swift */,
-				D53E8FDC28BD5AF8007082CC /* DriverListItemViewModelType.swift */,
+				D53E8FDA28BD5ADE007082CC /* CarListViewModelType.swift */,
+				D53E8FDC28BD5AF8007082CC /* CarListItemViewModelType.swift */,
 				D53E8FDE28BD5B34007082CC /* BaseCellViewModelType.swift */,
 				D53E8FE128BD5B71007082CC /* MapViewModelType.swift */,
 				D529EB4A28BF61D9005D0C85 /* CustomMapViewModelType.swift */,
@@ -491,8 +491,8 @@
 		D5954CCA28BB944A0035AD47 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				D53E8FE328BD5BBF007082CC /* DriverListRequest.swift */,
-				D53E8FE728BD5C76007082CC /* Driver.swift */,
+				D53E8FE328BD5BBF007082CC /* CarListRequest.swift */,
+				D53E8FE728BD5C76007082CC /* Car.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -500,7 +500,7 @@
 		D5954CCB28BB94510035AD47 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				D53E8FE928BD5E2F007082CC /* DriverListRepositoryType.swift */,
+				D53E8FE928BD5E2F007082CC /* CarListRepositoryType.swift */,
 				D53E900928BE0261007082CC /* ImageRepositoryType.swift */,
 			);
 			path = Repositories;
@@ -509,7 +509,7 @@
 		D5954CCC28BB94580035AD47 /* RepositoriesImp */ = {
 			isa = PBXGroup;
 			children = (
-				D53E8FF528BD6054007082CC /* DriverListRepository.swift */,
+				D53E8FF528BD6054007082CC /* CarListRepository.swift */,
 				D53E8FF728BD631F007082CC /* MockRepository.swift */,
 				D53E900E28BE121A007082CC /* ImageRepository.swift */,
 			);
@@ -564,7 +564,7 @@
 			isa = PBXGroup;
 			children = (
 				D5E9939B28BFB9140063B6E6 /* Sixt-CodeChallengeTests-Bridging-Header.h */,
-				D5E9939C28BFB9150063B6E6 /* DriveListViewModelTypeTest.swift */,
+				D5E9939C28BFB9150063B6E6 /* CarListViewModelTypeTest.swift */,
 				D5E9939E28BFB9EF0063B6E6 /* MapLocationFilterDataTest.swift */,
 			);
 			path = "Sixt-CodeChallengeTests";
@@ -653,9 +653,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5954CBE28BB907E0035AD47 /* LaunchScreen.storyboard in Resources */,
-				D529EBD528BF76C4005D0C85 /* DriverListViewController.xib in Resources */,
+				D529EBD528BF76C4005D0C85 /* CarListViewController.xib in Resources */,
 				D5954CBB28BB907E0035AD47 /* Assets.xcassets in Resources */,
-				D529EA9528BE8668005D0C85 /* DriverListTableViewCell.xib in Resources */,
+				D529EA9528BE8668005D0C85 /* CarListTableViewCell.xib in Resources */,
 				D529EAA428BE9ABE005D0C85 /* TabBarViewController.xib in Resources */,
 				D529EA8828BE8561005D0C85 /* MapViewController.xib in Resources */,
 				D529EB4428BF5BF7005D0C85 /* CustomMap.xib in Resources */,
@@ -684,46 +684,46 @@
 				D529EA7E28BE827C005D0C85 /* BaseViewController.swift in Sources */,
 				D53E8FFA28BD70A1007082CC /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				D53E8FE228BD5B71007082CC /* MapViewModelType.swift in Sources */,
-				D529EA9828BE86A6005D0C85 /* DriverListItemViewModel.swift in Sources */,
+				D529EA9828BE86A6005D0C85 /* CarListItemViewModel.swift in Sources */,
 				D529EB4D28BF6AEA005D0C85 /* CarAnnotation.swift in Sources */,
 				D529EAA328BE9ABE005D0C85 /* TabBarViewController.swift in Sources */,
-				D53E8FEA28BD5E2F007082CC /* DriverListRepositoryType.swift in Sources */,
-				D529EAB228BE9E45005D0C85 /* DriverListContainer.swift in Sources */,
+				D53E8FEA28BD5E2F007082CC /* CarListRepositoryType.swift in Sources */,
+				D529EAB228BE9E45005D0C85 /* CarListContainer.swift in Sources */,
 				D53E900628BD720D007082CC /* CustomMap.swift in Sources */,
 				D529EAA828BE9B7C005D0C85 /* TabBarViewModel.swift in Sources */,
-				D53E8FE828BD5C76007082CC /* Driver.swift in Sources */,
+				D53E8FE828BD5C76007082CC /* Car.swift in Sources */,
 				D529EAB628BE9ED0005D0C85 /* AppCoordinator.swift in Sources */,
 				D5954CD228BB9E8F0035AD47 /* ApiClientType.swift in Sources */,
 				D529EB4728BF6197005D0C85 /* CustomMapViewModel.swift in Sources */,
 				D53E900128BD717B007082CC /* UpdatedLocation.swift in Sources */,
 				D5E9938D28BFADA30063B6E6 /* Codable+Extension.swift in Sources */,
 				D53E8FEE28BD5EE3007082CC /* Reachibility.swift in Sources */,
-				D53E8FF628BD6054007082CC /* DriverListRepository.swift in Sources */,
+				D53E8FF628BD6054007082CC /* CarListRepository.swift in Sources */,
 				D53E8FFE28BD7125007082CC /* UIView+Extension.swift in Sources */,
-				D53E8FDD28BD5AF8007082CC /* DriverListItemViewModelType.swift in Sources */,
+				D53E8FDD28BD5AF8007082CC /* CarListItemViewModelType.swift in Sources */,
 				D5954CB228BB90790035AD47 /* AppDelegate.swift in Sources */,
 				D53E900D28BE1085007082CC /* Filing.swift in Sources */,
 				D529EAA628BE9B37005D0C85 /* TabBarViewModelType.swift in Sources */,
-				D53E8FE428BD5BBF007082CC /* DriverListRequest.swift in Sources */,
+				D53E8FE428BD5BBF007082CC /* CarListRequest.swift in Sources */,
 				D529EAAC28BE9E14005D0C85 /* Container.swift in Sources */,
 				D529EAB028BE9E36005D0C85 /* MapContainer.swift in Sources */,
-				D53E8FDB28BD5ADE007082CC /* DriverListViewModelType.swift in Sources */,
-				D529EA9D28BE9863005D0C85 /* DriverListAdapter.swift in Sources */,
+				D53E8FDB28BD5ADE007082CC /* CarListViewModelType.swift in Sources */,
+				D529EA9D28BE9863005D0C85 /* CarListAdapter.swift in Sources */,
 				D529EA8A28BE857E005D0C85 /* MapViewController.swift in Sources */,
 				D529EB4B28BF61D9005D0C85 /* CustomMapViewModelType.swift in Sources */,
 				D53E8FDF28BD5B34007082CC /* BaseCellViewModelType.swift in Sources */,
-				D529EA9428BE8668005D0C85 /* DriverListTableViewCell.swift in Sources */,
+				D529EA9428BE8668005D0C85 /* CarListTableViewCell.swift in Sources */,
 				D529EA8628BE837C005D0C85 /* MapViewModel.swift in Sources */,
-				D529EABC28BE9F61005D0C85 /* DriverMapCoodinator.swift in Sources */,
+				D529EABC28BE9F61005D0C85 /* CarMapCoodinator.swift in Sources */,
 				D53E8FD928BD5AA0007082CC /* BaseViewModel.swift in Sources */,
 				D53E8FF828BD631F007082CC /* MockRepository.swift in Sources */,
 				D529EBD228BF7505005D0C85 /* SceneDelegate.swift in Sources */,
 				D529EAAE28BE9E2E005D0C85 /* TabBarContainer.swift in Sources */,
 				D53E900A28BE0261007082CC /* ImageRepositoryType.swift in Sources */,
 				D529EAB428BE9EAF005D0C85 /* Coordinator.swift in Sources */,
-				D529EA9A28BE97B9005D0C85 /* DriverListViewModel.swift in Sources */,
-				D529EABA28BE9F3B005D0C85 /* DriverListCoordinator.swift in Sources */,
-				D529EA9028BE8619005D0C85 /* DriverListViewController.swift in Sources */,
+				D529EA9A28BE97B9005D0C85 /* CarListViewModel.swift in Sources */,
+				D529EABA28BE9F3B005D0C85 /* CarListCoordinator.swift in Sources */,
+				D529EA9028BE8619005D0C85 /* CarListViewController.swift in Sources */,
 				D53E8FFC28BD70EC007082CC /* MKMapView+Extension.swift in Sources */,
 				D53E8FF228BD5FEE007082CC /* HttpStatusCode.swift in Sources */,
 				D53E8FEC28BD5E9E007082CC /* ApiClient.swift in Sources */,
@@ -734,7 +734,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5E9939D28BFB9150063B6E6 /* DriveListViewModelTypeTest.swift in Sources */,
+				D5E9939D28BFB9150063B6E6 /* CarListViewModelTypeTest.swift in Sources */,
 				D5E9939F28BFB9EF0063B6E6 /* MapLocationFilterDataTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

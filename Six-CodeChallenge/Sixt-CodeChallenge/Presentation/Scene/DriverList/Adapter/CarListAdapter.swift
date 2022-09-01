@@ -1,5 +1,5 @@
 //
-//  DriverListAdapter.swift
+//  CarListAdapter.swift
 //  Sixt-CodeChallenge
 //
 //  Created by Khurram Iqbal on 31/08/2022.
@@ -9,10 +9,10 @@ import Foundation
 import Combine
 import UIKit
 
-/// Our TableViewAdapter for DriverList
-final class DriverListAdapter: NSObject, ListViewAdapterType{
+/// Our TableViewAdapter for CarList
+final class CarListAdapter: NSObject, ListViewAdapterType{
     
-    typealias ModelType = DriverListItemViewModelType
+    typealias ModelType = CarListItemViewModelType
 
     //    MARK: - Stored Properties
     
@@ -21,7 +21,7 @@ final class DriverListAdapter: NSObject, ListViewAdapterType{
     
     var cancelable: AnyCancellable!
 
-    var items: [[DriverListItemViewModelType]]  {
+    var items: [[CarListItemViewModelType]]  {
         didSet{
             DispatchQueue.main.async {
                 self.registerNibs()
@@ -55,7 +55,7 @@ final class DriverListAdapter: NSObject, ListViewAdapterType{
         print("Deinit Adapter class")
     }
 }
-extension DriverListAdapter{
+extension CarListAdapter{
     
     // MARK: - Helper Functions
     
@@ -70,14 +70,14 @@ extension DriverListAdapter{
         }
     }
 }
-extension DriverListAdapter: UITableViewDelegate{
+extension CarListAdapter: UITableViewDelegate{
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.delegate?.didSelectRowAt(indexPath: indexPath)
     }
 
 }
-extension DriverListAdapter: UITableViewDataSource{
+extension CarListAdapter: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionItems = items[section]
         return sectionItems.count

@@ -18,7 +18,7 @@ Code challenge was to show the list of cars in
 ## For List View have used adapter pattern.
 
 ``` Swift
-extension DriverListAdapter{
+extension CarListAdapter{
     
     // MARK: - Helper Functions
     
@@ -33,14 +33,14 @@ extension DriverListAdapter{
         }
     }
 }
-extension DriverListAdapter: UITableViewDelegate{
+extension CarListAdapter: UITableViewDelegate{
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.delegate?.didSelectRowAt(indexPath: indexPath)
     }
 
 }
-extension DriverListAdapter: UITableViewDataSource{
+extension CarListAdapter: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionItems = items[section]
         return sectionItems.count
@@ -98,12 +98,12 @@ extension DriverListAdapter: UITableViewDataSource{
 
 ``` Swift
  init(viewModel: T){
-        super.init(T: viewModel  , nibName: "DriverListViewController")
+        super.init(T: viewModel  , nibName: "CarListViewController")
     }
 ```
 
 ``` Swift
-init(repository: DriverListRepositoryType) {
+init(repository: CarListRepositoryType) {
         self.repository = repository
     }
 ```
@@ -115,27 +115,27 @@ init(repository: DriverListRepositoryType) {
  ```
  
  ``` Swift
- func createDriverListViewController()->UIViewController{
+ func createCarListViewController()->UIViewController{
      
-        let viewController = DriverListViewController<DriverListViewModel>.init(viewModel: self.createDriverListViewModel())
+        let viewController = CarListViewController<CarListViewModel>.init(viewModel: self.createCarListViewModel())
         return viewController
     }
     
-     func createDriverListViewModel()-> DriverListViewModel{
-         let driverListViewModel = DriverListViewModel.init(repository: self.createDriverListRepository())
+     func createCarListViewModel()-> CarListViewModel{
+         let CarListViewModel = CarListViewModel.init(repository: self.createCarListRepository())
          
-         return driverListViewModel
+         return CarListViewModel
     }
     
-    func createDriverListRepository()->DriverListRepositoryType{
-        let repository = DriverListRepository.init(networkManager: ApiClient.sharedInstance)
+    func createCarListRepository()->CarListRepositoryType{
+        let repository = CarListRepository.init(networkManager: ApiClient.sharedInstance)
         return repository
     }
 ``` 
 
 ## Combine is used for reactive approach
  ``` Swift
-  var itemsPublisher: Published<[DriverListItemViewModelType]>.Publisher{$items}
+  var itemsPublisher: Published<[CarListItemViewModelType]>.Publisher{$items}
     
     var loadingPublisher: Published<Bool>.Publisher{$isLoading}
     
@@ -143,16 +143,16 @@ init(repository: DriverListRepositoryType) {
     
  
     
-    @Published private var items: [DriverListItemViewModelType] = []
+    @Published private var items: [CarListItemViewModelType] = []
     @Published private var isLoading: Bool = false
     @Published private var showError: String = ""
     
      self.isLoading = true
        
-     private func getDriverList(){
+     private func getCarList(){
    
         self.isLoading = true
-        self.repository.getDriverList() { [weak self] drivers, error in
+        self.repository.getCarList() { [weak self] Cars, error in
             guard let self = self else{return}
             
             self.isLoading = false
@@ -161,24 +161,24 @@ init(repository: DriverListRepositoryType) {
                 self.showError = error
                 return
             }
-            if let drivers = drivers{
-                self.convertModelToViewModels(drivers: drivers)
+            if let Cars = Cars{
+                self.convertModelToViewModels(Cars: Cars)
             }
         }
     }
     
-    private func convertModelToViewModels(drivers: driverList){
+    private func convertModelToViewModels(Cars: CarList){
         
-        self.items =  drivers.compactMap { driver in
-            return DriverListItemViewModel.init(model:driver)
+        self.items =  Cars.compactMap { Car in
+            return CarListItemViewModel.init(model:Car)
         }
     }
 ```    
 ``` Swift    
     self.viewModel.itemsPublisher
             .receive(on: RunLoop.main)
-            .sink { [weak self] drivers in
-                self?.adpaterSubject.send([drivers])
+            .sink { [weak self] Cars in
+                self?.adpaterSubject.send([Cars])
 
             }
             .store(in: &cancelables)
@@ -208,7 +208,7 @@ init(repository: DriverListRepositoryType) {
 ## Codable is used for request encoding and decoding
 
 ``` Swift
-struct DriverListRequest: BaseRequest, Encodable{
+struct CarListRequest: BaseRequest, Encodable{
    
     //MARK: - StoredProperties
    
@@ -232,7 +232,7 @@ struct DriverListRequest: BaseRequest, Encodable{
 
 //MARK: - EncodedKeys
 
-extension DriverListRequest{
+extension CarListRequest{
     
     enum CodingKeys: CodingKey {
     }

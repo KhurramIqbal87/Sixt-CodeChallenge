@@ -21,24 +21,24 @@ final class TabBarContainer{
     
     func createTabBarVC(coordinator: ParentCoordinator, childCoordinators: inout [Coordinator])->[UIViewController]{
         
-        let driverListNVC = UINavigationController()
-        let driverMapNVC = UINavigationController()
+        let carListNVC = UINavigationController()
+        let carMapNVC = UINavigationController()
         
-        let driverListCoordinator = DriverListCoordinator.init(parentCoordinator: coordinator, navigationController: driverListNVC)
+        let carListCoordinator = CarListCoordinator.init(parentCoordinator: coordinator, navigationController: carListNVC)
         
-        let driverMapCoordinator = DriverMapCoodinator.init(parentCoordinator: coordinator, navController: driverMapNVC )
+        let carMapCoordinator = CarMapCoodinator.init(parentCoordinator: coordinator, navController: carMapNVC )
      
-        driverMapNVC.tabBarItem = UITabBarItem.init(title: "Map", image: UIImage.init(named: "MapUnselectedIcon"), selectedImage: nil)
+        carMapNVC.tabBarItem = UITabBarItem.init(title: "Map", image: UIImage.init(named: "MapUnselectedIcon"), selectedImage: nil)
         
-        driverListNVC.tabBarItem = UITabBarItem.init(title: "DriverList", image: UIImage.init(named: "DriverIcon"), selectedImage: nil)
+        carListNVC.tabBarItem = UITabBarItem.init(title: "CarList", image: UIImage.init(named: "DriverIcon"), selectedImage: nil)
         
-        driverMapCoordinator.start()
-        driverListCoordinator.start()
+        carMapCoordinator.start()
+        carListCoordinator.start()
         
-        childCoordinators.append(driverMapCoordinator)
-        childCoordinators.append(driverListCoordinator)
+        childCoordinators.append(carMapCoordinator)
+        childCoordinators.append(carListCoordinator)
         
-        return [driverListNVC, driverMapNVC]
+        return [carListNVC, carMapNVC]
         
     }
 }

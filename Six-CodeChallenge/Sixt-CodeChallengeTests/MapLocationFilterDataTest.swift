@@ -10,7 +10,7 @@ import Combine
 import CoreLocation
 @testable import Sixt_CodeChallenge
 
-/// this test class test MapViewModelType by providing mock drivers data. testing if it reutrns right number of filteredDriver through its published property by providing mock location and radius to its api.
+/// this test class test MapViewModelType by providing mock cars data. testing if it reutrns right number of filteredCar through its published property by providing mock location and radius to its api.
 
 class MapLocationFilterDataTest: XCTestCase {
    
@@ -22,37 +22,36 @@ class MapLocationFilterDataTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        let mockRepo = MockDriverListRepository.init()
+        let mockRepo = MockCarListRepository.init()
        
         let expectation = XCTestExpectation.init(description: "Mock Data")
       
-        mockRepo.getDriverList() { [weak self] drivers, error in
-            self?.sut = MapViewModel.init(repo: mockRepo,drivers: drivers ?? [])
+        mockRepo.getCarList() { [weak self] carList, error in
+           
+            self?.sut = MapViewModel.init(repo: mockRepo,cars: carList ?? [])
+            
             expectation.fulfill()
             
         }
         wait(for: [expectation], timeout: 10)
-        
-        
     }
     
-    func testFilteredDriverWithLocation(){
+    func testFilteredCarWithLocation(){
       
-        sut.getFilteredDrivers(currentLocation: CLLocationCoordinate2D.init(latitude: 48.162771, longitude: 11.592978), radius: 2000, refresh: false)
+        sut.getFilteredCars(currentLocation: CLLocationCoordinate2D.init(latitude: 48.162771, longitude: 11.592978), radius: 2000, refresh: false)
         
         let expectation = XCTestExpectation(description: "Should filter data and count should be 1.")
         
-        sut.filterDriverPublisher
+        sut.filterCarPublisher
             .receive(on: RunLoop.main)
-            .sink { drivers in
+            .sink { carList in
               
-                XCTAssert(drivers.count ==  1)
+                XCTAssert(carList.count ==  1)
                 expectation.fulfill()
             }
             .store(in: &anyCancelables)
         
         wait(for: [ expectation ], timeout: 15)
-        
     }
 
 }

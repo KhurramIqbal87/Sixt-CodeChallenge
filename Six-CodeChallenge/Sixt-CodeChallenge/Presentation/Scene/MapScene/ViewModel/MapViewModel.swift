@@ -11,75 +11,88 @@ import Foundation
 import Foundation
 import Combine
 import CoreLocation
+
 final class MapViewModel: MapViewModelType{
+    
+    // MARK: - StoredProperties
     var errorPublisher: Published<String>.Publisher{$error}
 
-    var filterDriverPublisher: Published<[Driver]>.Publisher{$filteredDrivers}
+    var filterCarPublisher: Published<[Car]>.Publisher{$filteredCars}
     
     var loadingPublisher: Published<Bool>.Publisher{$isLoading}
-
-    var radius: Double?
-    var lastLocation: CLLocationCoordinate2D?
     
-    @Published private var filteredDrivers: [Driver] = []
+    @Published private var filteredCars: [Car] = []
     @Published private var isLoading: Bool = false
     @Published private var error: String = ""
-   
-    private let repo: DriverListRepositoryType
-    private var drivers: [Driver] = []
     
-    init(repo: DriverListRepositoryType, drivers: [Driver] = []){
+    var radius: Double?
+    var lastLocation: CLLocationCoordinate2D?
+   
+    private let repo: CarListRepositoryType
+    private var cars: [Car] = []
+    
+    //MARK: - Initializer
+    
+    init(repo: CarListRepositoryType, cars: [Car] = []){
+       
         self.repo = repo
-        self.drivers = drivers
+        self.cars = cars
     }
+    
+    //MARK: - Implementations
     
     func getTitle() -> String {
         return "Find CAB"
     }
     
-    func getFilteredDrivers(currentLocation: CLLocationCoordinate2D, radius: Double, refresh: Bool) {
+    func getFilteredCars(currentLocation: CLLocationCoordinate2D, radius: Double, refresh: Bool) {
         
         self.lastLocation = currentLocation
         self.radius = radius
-        if self.drivers.count == 0 || refresh{
-            self.getDrivers{ [weak self] in
-                self?.filteredDrivers(currentLocation: currentLocation, radius: radius)
+        if self.cars.count == 0 || refresh{
+            self.getCars{ [weak self] in
+                
+                self?.filteredCars(currentLocation: currentLocation, radius: radius)
             }
             return
         }
-        self.filteredDrivers(currentLocation: currentLocation, radius: radius)
+        self.filteredCars(currentLocation: currentLocation, radius: radius)
     }
   
    
-    private func filteredDrivers(currentLocation: CLLocationCoordinate2D, radius: Double ){
-        self.filteredDrivers = self.drivers.filter({ driver in
-            return driver.getCLCoordinate().underReach(currentLocation2D: currentLocation, radius: radius)
-        })
-    }
-    
-   /// This func getDrivers or Car from Repository and viewModel updates ViewController using combine property for error or list.
-    private func getDrivers(completion: ()->Void){
-        
-        self.isLoading = true
-        self.repo.getDriverList() { [weak self] (driverList, error) in
-            
-            self?.isLoading = false
-            
-            if let error = error{
-                self?.error = error
-            }
-            
-            if let drivers = driverList{
-                self?.drivers = drivers
-            }
-        }
-    }
-    
     func refresh() {
+        
         if let lastLocation = lastLocation, let radius = radius {
             
-            self.getFilteredDrivers(currentLocation: lastLocation, radius: radius, refresh: true)
+            self.getFilteredCars(currentLocation: lastLocation, radius: radius, refresh: true)
         }
     }
+}
+
+extension MapViewModel{
+    /// This func getCar from Repository and viewModel updates ViewController using combine property for error or list.
+     private func getCars(completion: ()->Void){
+         
+         self.isLoading = true
+         self.repo.getCarList() { [weak self] (carList, error) in
+             
+             self?.isLoading = false
+             
+             if let error = error{
+                 self?.error = error
+             }
+             
+             if let cars = carList{
+                 self?.cars = cars
+             }
+         }
+     }
     
+    private func filteredCars(currentLocation: CLLocationCoordinate2D, radius: Double ){
+        
+        self.filteredCars = self.cars.filter({ car in
+            
+            return car.getCLCoordinate().underReach(currentLocation2D: currentLocation, radius: radius)
+        })
+    }
 }

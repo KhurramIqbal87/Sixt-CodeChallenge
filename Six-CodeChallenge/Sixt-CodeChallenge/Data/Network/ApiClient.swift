@@ -54,8 +54,6 @@ final class ApiClient: ApiClientType{
             } else{
                 completion(nil, "Corrupt Data")
             }
-            
-            
         }
         task.resume()
     }

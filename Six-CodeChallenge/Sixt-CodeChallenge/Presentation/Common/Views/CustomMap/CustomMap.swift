@@ -25,7 +25,7 @@ import Combine
     private var viewModel: CustomMapViewModelType?
     private let annotationReusableIdentifier =  "Annotation"
    
-    var drivers: PassthroughSubject<[Driver], Never> = PassthroughSubject<[Driver], Never>()
+    var cars: PassthroughSubject<[Car], Never> = PassthroughSubject<[Car], Never>()
     
     @Published var updatedLocation : UpdatedLocation = UpdatedLocation()
  
@@ -50,7 +50,7 @@ extension CustomMap{
     
     private func setup(){
         
-        let cancelable =  self.drivers.sink { [weak self] drivers in            self?.setAnnotations(drivers: drivers)
+        let cancelable =  self.cars.sink { [weak self] carList in            self?.setAnnotations(cars: carList)
         }
         
         self.cancelable.append(cancelable)
@@ -78,17 +78,17 @@ extension CustomMap{
 // MARK: - Helper Functions
 extension CustomMap{
     
-    private func setAnnotations(drivers: [Driver]){
+    private func setAnnotations(cars: [Car]){
         // remove all previouse annotation
         self.removeAnnotations()
        
         // add new annotation for updated location
-        for driver in drivers{
+        for car in cars{
             
             let annotation = CarAnnotation.init()
            
-            annotation.imageURL = driver.carImageURL
-            annotation.coordinate = driver.getCLCoordinate()
+            annotation.imageURL = car.carImageURL
+            annotation.coordinate = car.getCLCoordinate()
           
             self.mapView.addAnnotation(annotation)
         }
@@ -148,7 +148,7 @@ extension CustomMap: MKMapViewDelegate{
         self.currentLocationView.backgroundColor = .orange
     }
     
-    /// on region changed create a new object of updated location so viewController ka recieve new value and ask viewModel to filter list of driver with respect to current locationn
+    /// on region changed create a new object of updated location so viewController ka recieve new value and ask viewModel to filter list of cars with respect to current locationn
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
        
         UIView.animate(withDuration: 0.1) {
@@ -181,9 +181,11 @@ extension CustomMap: CLLocationManagerDelegate{
 
 
 // To handle map in a different class at time if we want to change the implementation we can with zero effect on our viewController end
+
 protocol CustomMapType{
+   
     var updatedLocation : UpdatedLocation{get}
-    var drivers: PassthroughSubject<[Driver],Never>{get}
+    var cars: PassthroughSubject<[Car],Never>{get}
 }
 
 

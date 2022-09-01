@@ -1,21 +1,18 @@
 //
-//  Driver.swift
+//  Car.swift
 //  Sixt-CodeChallenge
 //
 //  Created by Khurram Iqbal on 30/08/2022.
 //
 
-import Foundation
-
-
 
 import Foundation
 import CoreLocation
 
-typealias driverList = [Driver]
+typealias carList = [Car]
 
-// MARK: - Driver
-struct Driver: Codable {
+// MARK: - Car
+struct Car: Codable {
     let id, modelIdentifier, modelName, name: String
     let make: String
     let group: Group
@@ -27,7 +24,7 @@ struct Driver: Codable {
     let latitude, longitude: Double
     let innerCleanliness: InnerCleanliness
     let carImageURL: String
-
+   
     enum CodingKeys: String, CodingKey {
         case id, modelIdentifier, modelName, name, make, group, color, series, fuelType, fuelLevel, transmission, licensePlate, latitude, longitude, innerCleanliness
         case carImageURL = "carImageUrl"
@@ -35,7 +32,7 @@ struct Driver: Codable {
  
 }
 //MARK: - Convert lat long into cllcordinate
-extension Driver{
+extension Car{
     func getCLCoordinate()->CLLocationCoordinate2D{
         return CLLocationCoordinate2D.init(latitude: self.latitude, longitude: self.longitude)
     }

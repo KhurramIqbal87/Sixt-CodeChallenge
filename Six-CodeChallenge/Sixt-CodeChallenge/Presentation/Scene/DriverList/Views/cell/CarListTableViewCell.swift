@@ -1,5 +1,5 @@
 //
-//  DriverListTableViewCell.swift
+//  CarListTableViewCell.swift
 //  Sixt-CodeChallenge
 //
 //  Created by Khurram Iqbal on 30/08/2022.
@@ -11,13 +11,13 @@ protocol BaseTableViewCell {
     func setup(viewModel: Any)
 }
 
-final class DriverListTableViewCell: UITableViewCell,BaseTableViewCell {
+final class CarListTableViewCell: UITableViewCell,BaseTableViewCell {
    
-    private var viewModel: DriverListItemViewModelType? {
+    private var viewModel: CarListItemViewModelType? {
         didSet{
             
-            if let driverListItemViewModel = viewModel{
-                self.prepareUI(viewModel: driverListItemViewModel)
+            if let carListItemViewModel = viewModel{
+                self.prepareUI(viewModel: carListItemViewModel)
             }
         }
     }
@@ -36,11 +36,11 @@ final class DriverListTableViewCell: UITableViewCell,BaseTableViewCell {
     
     func setup(viewModel: Any) {
         
-        if let driverListModel = viewModel as? DriverListItemViewModelType {
+        if let carListModel = viewModel as? CarListItemViewModelType {
             
-            self.viewModel = driverListModel
+            self.viewModel = carListModel
             
-            self.prepareUI(viewModel: driverListModel)
+            self.prepareUI(viewModel: carListModel)
             
             self.containerView?.layer.borderColor  = UIColor.orange.cgColor
             self.containerView?.layer.cornerRadius = 4
@@ -50,7 +50,7 @@ final class DriverListTableViewCell: UITableViewCell,BaseTableViewCell {
             
         }
     }
-    private  func prepareUI(viewModel: DriverListItemViewModelType){
+    private  func prepareUI(viewModel: CarListItemViewModelType){
        
         self.vehicleTypeLabel?.text = viewModel.getType()
         self.licencePlateLabel?.text = viewModel.getLicensePlate()

@@ -1,5 +1,5 @@
 //
-//  DriveListViewModelTypeTest.swift
+//  CarListViewModelTypeTest.swift
 //  Sixt-CodeChallengeTests
 //
 //  Created by Khurram Iqbal on 31/08/2022.
@@ -10,18 +10,22 @@ import Combine
 
 @testable import Sixt_CodeChallenge
 
-class DriveListViewModelTypeTest: XCTestCase {
+class CarListViewModelTypeTest: XCTestCase {
 
-    var sut: DriverListViewModelType!
-    let stream = PassthroughSubject<[DriverListItemViewModelType],Never>()
+    var sut: CarListViewModelType!
+    
+    let stream = PassthroughSubject<[CarListItemViewModelType],Never>()
+    
     let loading = PassthroughSubject<Bool,Never>()
+    
     var anyCancelables:Set<AnyCancellable> = []
+   
     override func setUp() {
+       
         super.setUp()
-        let repo = MockDriverListRepository.init()
-        sut = DriverListViewModel.init(repository: repo)
-        
-        
+
+        let repo = MockCarListRepository.init()
+        sut = CarListViewModel.init(repository: repo)
     }
 
     override func tearDownWithError() throws {
@@ -32,18 +36,17 @@ class DriveListViewModelTypeTest: XCTestCase {
     func testViewDidLoadState(){
         sut.viewDidLoad()
         
-        let expectation = XCTestExpectation.init(description: "Drivers should be greater than 0")
+        let expectation = XCTestExpectation.init(description: "Cars should be greater than 0")
         
         sut.itemsPublisher
             .receive(on: RunLoop.main)
-            .sink { driver in
+            .sink { carList in
                 
-                XCTAssert(driver.count > 0)
+                XCTAssert(carList.count > 0)
                 expectation.fulfill()
             }.store(in: &anyCancelables)
         
         wait(for: [expectation], timeout: 10)
-       
     }
 
 }

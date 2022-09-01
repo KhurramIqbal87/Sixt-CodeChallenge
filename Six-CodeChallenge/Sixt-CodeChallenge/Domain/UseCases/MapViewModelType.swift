@@ -12,7 +12,7 @@ import Combine
 /// MapviewModel used Combine to published its data, error handling, and handle loading states.
 protocol MapViewModelType: BaseViewModel{
    
-    var filterDriverPublisher: Published<[Driver]>.Publisher{get}
+    var filterCarPublisher: Published<[Car]>.Publisher{get}
     var loadingPublisher: Published<Bool>.Publisher{get}
     var errorPublisher: Published<String>.Publisher{get}
     var lastLocation: CLLocationCoordinate2D?{get}
@@ -20,7 +20,7 @@ protocol MapViewModelType: BaseViewModel{
     
 
     func getTitle()->String
-    func getFilteredDrivers(currentLocation:CLLocationCoordinate2D, radius: Double, refresh: Bool)
+    func getFilteredCars(currentLocation:CLLocationCoordinate2D, radius: Double, refresh: Bool)
     func refresh()
     
     

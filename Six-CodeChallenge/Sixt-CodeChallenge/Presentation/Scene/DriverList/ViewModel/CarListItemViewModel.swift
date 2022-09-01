@@ -1,5 +1,5 @@
 //
-//  DriverListItemViewModel.swift
+//  CarListItemViewModel.swift
 //  Sixt-CodeChallenge
 //
 //  Created by Khurram Iqbal on 30/08/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 import CoreLocation
-final class DriverListItemViewModel: DriverListItemViewModelType {
+final class CarListItemViewModel: CarListItemViewModelType {
     
     //MARK:  - Properties
     private let repo: ImageRepositoryType
@@ -20,10 +20,11 @@ final class DriverListItemViewModel: DriverListItemViewModelType {
     private let licensePlate: String
     private let transmission: String
     private let fuelType: String
-    private let cleanniess: String
+    private let cleanliness: String
     private let imageUrl: String
     
-    init(model: Driver, repo: ImageRepositoryType = ImageRepository.sharedInstance){
+    //MARK: -  Initializers
+    init(model: Car, repo: ImageRepositoryType = ImageRepository.sharedInstance){
        
         self.repo = repo
         
@@ -35,14 +36,13 @@ final class DriverListItemViewModel: DriverListItemViewModelType {
         self.id = model.id
         
         self.transmission = model.transmission.getFullValue()
-        self.cleanniess = model.innerCleanliness.getFullValue()
+        self.cleanliness = model.innerCleanliness.getFullValue()
         self.fuelType = model.fuelType.getFullValue()
-    
     }
-   
+   //MARK: - Implementations
     
     func getReusableIdentifierName() -> String {
-        return "\(DriverListTableViewCell.self)"
+        return "\(CarListTableViewCell.self)"
     }
     
     func getHeightForRow() -> Float {
@@ -69,12 +69,11 @@ final class DriverListItemViewModel: DriverListItemViewModelType {
     }
     
     func getCleaniness() -> String {
-        return self.cleanniess
+        return self.cleanliness
     }
-    
-   
-    
+     
     func getImage(completion: @escaping (Data?) -> Void) {
+        
         if let imageData = imageData{
             completion(imageData)
             return

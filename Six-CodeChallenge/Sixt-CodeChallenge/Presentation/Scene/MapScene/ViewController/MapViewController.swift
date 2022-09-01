@@ -5,7 +5,6 @@
 //  Created by Khurram Iqbal on 30/08/2022.
 //
 
-import UIKit
 
 import UIKit
 import Combine
@@ -16,7 +15,7 @@ import Combine
 
 /// MapviewController handles error receive on view Model at times of network communication
 
-/// MapviewController receives latest location and radius of map from map publisher and gives it to viewModel to recieve filtered driver data through its published property.
+/// MapviewController receives latest location and radius of map from map publisher and gives it to viewModel to recieve filtered car data through its published property.
 
 /// MapViewController has a refesh button at top used to get the latest data
 
@@ -24,7 +23,7 @@ final class MapViewController<T: MapViewModelType>: BaseViewController<T> {
    
     //MARK: - IBOutlets
     
-    @IBOutlet weak var mapView: CustomMap!
+    @IBOutlet private weak var mapView: CustomMap!
     
     //MARK: - StoreProperties
     
@@ -70,12 +69,13 @@ extension MapViewController{
     
     //MARK: - Helpers
     private func setupViewModel(){
-       ///
-        self.viewModel.filterDriverPublisher
+       
+    
+        self.viewModel.filterCarPublisher
             .receive(on: RunLoop.main)
-            .sink { [weak self] drivers in
+            .sink { [weak self] cars in
                 
-                self?.mapView.drivers.send(drivers)
+                self?.mapView.cars.send(cars)
             }
             .store(in: &cancelable)
         
@@ -103,7 +103,6 @@ extension MapViewController{
                 self?.showError(title: "Error", message: error)
             }
             .store(in: &cancelable)
-        
     }
     
     func setupMapView(){
@@ -119,7 +118,7 @@ extension MapViewController{
                 print("Sinked Location:", location)
                 print("Sinked Radius", radius)
                 
-                self.viewModel.getFilteredDrivers(currentLocation: location, radius: radius, refresh: false)
+                self.viewModel.getFilteredCars(currentLocation: location, radius: radius, refresh: false)
             }
         }
         self.cancelable.insert(subscriber)

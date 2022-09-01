@@ -1,12 +1,12 @@
 //
-//  DriverListRequest.swift
+//  CarListRequest.swift
 //  Sixt-CodeChallenge
 //
 //  Created by Khurram Iqbal on 30/08/2022.
 //
 
 import Foundation
-struct DriverListRequest: BaseRequest, Encodable{
+struct CarListRequest: BaseRequest, Encodable{
    
     //MARK: - StoredProperties
    
@@ -22,7 +22,6 @@ struct DriverListRequest: BaseRequest, Encodable{
         return  nil
     }
     
-    
     func getPath() -> String {
         return self.getBaseUrl() + self.path
     }
@@ -30,7 +29,7 @@ struct DriverListRequest: BaseRequest, Encodable{
 
 //MARK: - EncodedKeys
 
-extension DriverListRequest{
+extension CarListRequest{
     
     enum CodingKeys: CodingKey {
     }

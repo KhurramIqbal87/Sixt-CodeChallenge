@@ -1,5 +1,5 @@
 //
-//  DriverMapCoodinator.swift
+//  CarMapCoodinator.swift
 //  Sixt-CodeChallenge
 //
 //  Created by Khurram Iqbal on 31/08/2022.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class DriverMapCoodinator: ParentCoordinator{
+final class CarMapCoodinator: ParentCoordinator{
     var childCoordinators: [Coordinator]?
     
     func didFinishChildCoordinator(coordintor: Coordinator) {

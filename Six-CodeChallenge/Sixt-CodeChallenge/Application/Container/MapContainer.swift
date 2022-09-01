@@ -16,7 +16,7 @@ final class MapContainer{
     
      func createMapViewModel()-> MapViewModel{
          
-         let viewModel = MapViewModel.init(repo: self.createDriverListRepository())
+         let viewModel = MapViewModel.init(repo: self.createCarListRepository())
          
          return viewModel
     }
@@ -26,8 +26,8 @@ final class MapContainer{
         return viewModel
     }
     
-    func createDriverListRepository()->DriverListRepositoryType{
-        let repository = DriverListRepository.init(networkManager: ApiClient.sharedInstance)
+    func createCarListRepository()->CarListRepositoryType{
+        let repository = CarListRepository.init(networkManager: ApiClient.sharedInstance)
         return repository
     }
 }

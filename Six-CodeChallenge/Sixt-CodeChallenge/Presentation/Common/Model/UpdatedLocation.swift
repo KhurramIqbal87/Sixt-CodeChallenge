@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+
 struct UpdatedLocation{
     var currentLocatiion: CLLocationCoordinate2D?
     var radius: Double?

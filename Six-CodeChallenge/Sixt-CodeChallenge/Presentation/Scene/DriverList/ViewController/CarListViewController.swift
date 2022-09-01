@@ -1,32 +1,36 @@
 //
-//  DriverListViewController.swift
+//  CarListViewController.swift
 //  Sixt-CodeChallenge
 //
 //  Created by Khurram Iqbal on 30/08/2022.
 //
 
-import UIKit
 
 import UIKit
 import Combine
-/// DriverListviewController show driver list on listview
+/// CarListviewController show car list on listview
 /// it also show error receive on network calls
 /// it has a pull to refresh to reload data on list view
- final class DriverListViewController<T: DriverListViewModelType>: BaseViewController<T> {
+final class CarListViewController<T: CarListViewModelType>: BaseViewController<T> {
+    
     //    MARK: - IBOutlets
-    @IBOutlet weak var tableView: UITableView!
-   
+    
+    @IBOutlet private weak var tableView: UITableView!
+    
     //    MARK: - Properties
+    
     private var cancelables: Set<AnyCancellable> = []
     private  var refreshControl = UIRefreshControl()
     
-    private let adpaterSubject = PassthroughSubject<[[DriverListItemViewModelType]],Never>()
-  
-    private var adapter : DriverListAdapter!
+    private let adpaterSubject = PassthroughSubject<[[CarListItemViewModelType]],Never>()
+    
+    private var adapter : CarListAdapter!
     //    MARK: - Initializers
-    // initialize view Controller manually
+    
+    /// initialize view Controller manually
+   
     init(viewModel: T){
-        super.init(T: viewModel  , nibName: "DriverListViewController")
+        super.init(T: viewModel  , nibName: "CarListViewController")
     }
     
     // viewModel is required from outside for lose coupling
@@ -35,35 +39,36 @@ import Combine
     }
     
     //    MARK: - ViewLifeCycles
+    
     override func viewDidLoad() {
+       
         super.viewDidLoad()
         self.initialSetup()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
         self.title = self.viewModel.getTitle()
-        
     }
     
     //    MARK: - Functions
-     
-     // initial setup helps in setuping up intial call to viewmodel and subscribing viewmodel publishers to get our data stream. it
-     // as soon we get data from viewModel Publisher viewController sends data to adapter using Subject.send
-     
+    
+    // initial setup helps in setuping up intial call to viewmodel and subscribing viewmodel publishers to get our data stream. it
+    // as soon we get data from viewModel Publisher viewController sends data to adapter using Subject.send
+    
     private func initialSetup(){
-       
+        
         
         self.viewModel.viewDidLoad()
         
-        self.adapter = DriverListAdapter.init(items: [[]], tableView: self.tableView, dataSubject: self.adpaterSubject)
+        self.adapter = CarListAdapter.init(items: [[]], tableView: self.tableView, dataSubject: self.adpaterSubject)
         
         self.viewModel.itemsPublisher
             .receive(on: RunLoop.main)
-            .sink { [weak self] drivers in
-                self?.adpaterSubject.send([drivers])
-
+            .sink { [weak self] carList in
+                self?.adpaterSubject.send([carList])
+                
             }
             .store(in: &cancelables)
         self.viewModel.loadingPublisher
@@ -74,7 +79,7 @@ import Combine
                 }else{
                     self?.hideLoader()
                     self?.endRefreshing()
-                   
+                    
                 }
             }
             .store(in: &cancelables)
@@ -94,22 +99,22 @@ import Combine
     
     private func setupRefreshControl(){
         refreshControl.attributedTitle = NSAttributedString(string: "Refresh Data")
-           refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-           tableView.addSubview(refreshControl) // not re
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl) // not re
     }
     @objc private func refresh(_ sender: AnyObject) {
-       // Code to refresh table view
+        // Code to refresh table view
         self.viewModel.refresh()
     }
-     
-     private func endRefreshing(){
-         DispatchQueue.main.async {[weak self] in
-             self?.refreshControl.endRefreshing()
-         }
-     }
+    
+    private func endRefreshing(){
+        DispatchQueue.main.async {[weak self] in
+            self?.refreshControl.endRefreshing()
+        }
+    }
 }
 
-extension DriverListViewController: ListViewAdapterDelegate{
+extension CarListViewController: ListViewAdapterDelegate{
     
     /// on click of list item if we want to navigate or do any thing this will be the handler for item click
     func didSelectRowAt(indexPath: IndexPath) {

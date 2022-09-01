@@ -6,7 +6,8 @@
 //
 
 import SystemConfiguration
-// to check internet status
+
+/// to check internet status
 public final class Reachability {
 
     static func isConnectedToNetwork() -> Bool {
@@ -34,6 +35,5 @@ public final class Reachability {
         let ret = (isReachable && !needsConnection)
 
         return ret
-
     }
 }

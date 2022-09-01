@@ -1,5 +1,5 @@
 //
-//  DriverListCoordinator.swift
+//  CarListCoordinator.swift
 //  Sixt-CodeChallenge
 //
 //  Created by Khurram Iqbal on 31/08/2022.
@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-final class DriverListCoordinator: NSObject, ParentCoordinator{
+final class CarListCoordinator: NSObject, ParentCoordinator{
     var childCoordinators: [Coordinator]?
     
     var parentCoordinator: Coordinator?
     
-    private let container: DriverListContainer = DriverListContainer.init()
+    private let container: CarListContainer = CarListContainer.init()
     var navController: UINavigationController
     
     init(parentCoordinator: Coordinator, navigationController: UINavigationController ){
@@ -23,7 +23,7 @@ final class DriverListCoordinator: NSObject, ParentCoordinator{
 // in start func we make sure we inject all dependencies needed for viewController, viewModel to start.
     func start() {
         
-        let viewController = self.container.createDriverListViewController()
+        let viewController = self.container.createCarListViewController()
         
         self.navController.setViewControllers([viewController], animated: true)
             
